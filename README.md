@@ -1,24 +1,23 @@
-# README
+# lab Forward Backend Challange
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## System Requirements
+App is built using Ruby 2.5.0 and Rails 5.2.3
 
-Things you may want to cover:
 
-* Ruby version
+## Running instructions
+Clone the application in local using 
 
-* System dependencies
+`
+    git clone https://github.com/raviskit/lab-forward-challange.git
+`
 
-* Configuration
+cd into the directory and run ` bundle install `
 
-* Database creation
+then setup the db using ` rails db:create && rails db:migrate && rails db:seed`
 
-* Database initialization
+run the server using ` rails s`
 
-* How to run the test suite
+server will be up at ` http:// localhost:3000/`
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
-
-* ...
+## 

@@ -13,17 +13,8 @@
 ActiveRecord::Schema.define(version: 2019_09_23_033658) do
 
   create_table "data_inputs", force: :cascade do |t|
-    t.string "data", null: false
+    t.string "input", null: false
     t.string "threshold", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.string "name"
-    t.string "username"
-    t.string "email"
-    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

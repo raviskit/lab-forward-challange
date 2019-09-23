@@ -3,6 +3,16 @@ require 'json'
 module Api::V1
   class DataInputsController < ApplicationController
 
+    # POST create
+    def create
+      data_input = DataInput.create(data_input_params)
+      if data_input.save
+        render json: { signal: data_input, message: 'input added successfully' }, status: :ok
+      else
+        render json: { message: 'Invalid signal input' }, status: :internal_server_error
+      end
+    end
+
     # POST output
     def output
       return signal_between_dates if params[:start_date].present? || params[:end_date].present?
@@ -35,6 +45,10 @@ module Api::V1
       render json: { signal: output, message: 'output generated successfully' }, status: :ok
     rescue ArgumentError
       return render json: { message: 'Invalid Date or format' }, status: :bad_request
+    end
+
+    def data_input_params
+      params.permit(:id, :input, :threshold)
     end
   end
 end
