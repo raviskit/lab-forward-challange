@@ -15,10 +15,7 @@ gem 'puma', '~> 3.11'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-# Use Json Web Token (JWT) for token based authentication
-gem 'jwt'
-# Use ActiveModel has_secure_password
-gem 'bcrypt', '~> 3.1.7'
+gem 'rspec-rails', '~> 3.7', '>= 3.7.2'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
@@ -43,6 +40,15 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
+group :test do
+  gem 'database_cleaner'
+  gem 'factory_bot_rails', '~> 4.10'
+  gem 'faker', '~> 1.9', '>= 1.9.1'
+  gem 'rails-controller-testing'
+  gem 'rspec-activemodel-mocks'
+  gem 'shoulda', '~> 3.6'
+  gem 'shoulda-matchers', '~> 3.1', '>= 3.1.2'
+end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
