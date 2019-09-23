@@ -13,7 +13,7 @@ module Api::V1
         input.to_i > threshold ? 1 : 0
       end
 
-      render json: { output: output, message: 'output generated successfully' }, status: :ok
+      render json: { signal: output, message: 'output generated successfully' }, status: :ok
     end
 
 
