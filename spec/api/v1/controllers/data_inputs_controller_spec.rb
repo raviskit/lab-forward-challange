@@ -34,7 +34,7 @@ RSpec.describe Api::V1::DataInputsController, type: :controller do
     end
 
     it 'gives success results if correct date are supplied' do
-      DataInput.create!(data: [1, 4, 5, 0, 1, 2], threshold: 3 )
+      DataInput.create!(input: [1, 4, 5, 0, 1, 2], threshold: 3 )
       post 'output', params: { start_date: Date.today, end_date: Date.today + 1 }
       expect(JSON.parse(response.body)['signal']).to eq([[0, 1, 1, 0, 0, 0]])
       expect(JSON.parse(response.body)['message']).to eq('output generated successfully')

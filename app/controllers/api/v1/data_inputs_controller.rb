@@ -37,9 +37,11 @@ module Api::V1
       end_date = Date.parse(params[:end_date])
 
       data_inputs = DataInput.where(created_at: start_date..end_date)
+
       output = []
       data_inputs.each do |input|
-        output << JSON.parse(input.data).map { |i| i > input.threshold.to_i ? 1 : 0 }
+
+        output << JSON.parse(input.input).map { |i| i > input.threshold.to_i ? 1 : 0 }
       end
 
       render json: { signal: output, message: 'output generated successfully' }, status: :ok
